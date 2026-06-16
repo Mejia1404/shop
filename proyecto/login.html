@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar sesión — Autofix</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body data-page="login">
+
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo"><span class="logo-icon">⚙</span>Auto<strong>fix</strong></a>
+      <nav class="navbar__links">
+        <a href="index.html"       data-page="index">Inicio</a>
+        <a href="catalogo.html"    data-page="catalogo">Catálogo</a>
+        <a href="diagnostico.html" data-page="diagnostico">Tele-diagnóstico</a>
+      </nav>
+      <div class="navbar__actions">
+        <label class="switch" title="Cambiar tema">
+          <input type="checkbox" id="theme-toggle" /><span class="slider"></span>
+        </label>
+        <a href="carrito.html" class="cart-icon-btn">
+          🛒<span class="cart-badge hidden" id="cart-count">0</span>
+        </a>
+        <div class="auth-area" id="auth-area"></div>
+        <button class="hamburger" id="hamburger">☰</button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="index.html"       data-page="index">🏠 Inicio</a>
+      <a href="catalogo.html"    data-page="catalogo">🔧 Catálogo</a>
+      <a href="diagnostico.html" data-page="diagnostico">🤖 Tele-diagnóstico</a>
+      <div id="mobile-auth" style="display:flex;gap:8px;margin-top:8px;"></div>
+    </nav>
+  </header>
+
+  <main class="auth-page">
+    <div class="auth-card fade-up">
+
+      <div class="auth-card__logo">
+        <span class="logo-icon">⚙</span>
+        Auto<strong>fix</strong>
+      </div>
+
+      <h2>Bienvenido de vuelta</h2>
+      <p class="auth-card__sub">Ingresa tus datos para acceder a tu cuenta.</p>
+
+      <!-- Alerta -->
+      <div class="auth-alert auth-alert--error" id="login-alert">
+        <span>⚠️</span><span id="login-alert-msg"></span>
+      </div>
+
+      <form class="auth-form" id="login-form" novalidate>
+
+        <div class="input-group">
+          <label for="login-email">Correo electrónico</label>
+          <div class="input-wrapper">
+            <span class="input-icon">✉️</span>
+            <input type="email" id="login-email" placeholder="tu@correo.com" autocomplete="email" required />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="login-pw">Contraseña</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="login-pw" placeholder="••••••••" autocomplete="current-password" required />
+            <button type="button" class="toggle-pw" data-target="login-pw">👁</button>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;font-size:.83rem;">
+          <label style="display:flex;align-items:center;gap:6px;cursor:pointer;color:var(--text-secondary);">
+            <input type="checkbox" id="remember" style="width:auto;" />
+            Recordarme
+          </label>
+          <a href="#" style="color:var(--primary);font-weight:600;">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--full btn--lg" id="btn-login">
+          Iniciar sesión
+        </button>
+
+      </form>
+
+      <div class="auth-divider">o continúa con</div>
+
+      <!-- Botones sociales (simulados) -->
+      <div style="display:flex;gap:10px;">
+        <button class="btn btn--ghost btn--full" onclick="showToast('🔗 Integración social no disponible en demo','default')">
+          <span>🇬</span> Google
+        </button>
+        <button class="btn btn--ghost btn--full" onclick="showToast('🔗 Integración social no disponible en demo','default')">
+          <span>📘</span> Facebook
+        </button>
+      </div>
+
+      <p class="auth-switch">
+        ¿No tienes cuenta? <a href="registro.html">Regístrate gratis</a>
+      </p>
+
+    </div>
+  </main>
+
+  <div id="toast"></div>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

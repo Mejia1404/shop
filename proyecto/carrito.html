@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi carrito — Autofix</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body data-page="carrito">
+
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo"><span class="logo-icon">⚙</span>Auto<strong>fix</strong></a>
+      <nav class="navbar__links">
+        <a href="index.html"        data-page="index">Inicio</a>
+        <a href="catalogo.html"     data-page="catalogo">Catálogo</a>
+        <a href="diagnostico.html"  data-page="diagnostico">Tele-diagnóstico</a>
+        <a href="carrito.html"      data-page="carrito">Mi carrito</a>
+      </nav>
+      <div class="navbar__actions">
+        <label class="switch" title="Cambiar tema">
+          <input type="checkbox" id="theme-toggle" /><span class="slider"></span>
+        </label>
+        <a href="carrito.html" class="cart-icon-btn" title="Mi carrito">
+          🛒<span class="cart-badge hidden" id="cart-count">0</span>
+        </a>
+        <div class="auth-area" id="auth-area"></div>
+        <button class="hamburger" id="hamburger">☰</button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="index.html"       data-page="index">🏠 Inicio</a>
+      <a href="catalogo.html"    data-page="catalogo">🔧 Catálogo</a>
+      <a href="diagnostico.html" data-page="diagnostico">🤖 Tele-diagnóstico</a>
+      <a href="carrito.html"     data-page="carrito">🛒 Mi carrito</a>
+      <div id="mobile-auth" style="display:flex;gap:8px;margin-top:8px;"></div>
+    </nav>
+  </header>
+
+  <div class="page-header">
+    <h1>🛒 Mi carrito</h1>
+    <p>Revisa los repuestos seleccionados antes de finalizar tu pedido.</p>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="cart-layout" id="cart-layout">
+
+        <!-- Lista de ítems -->
+        <div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+            <h2 style="font-size:1rem;font-weight:700;" id="cart-title">Cargando…</h2>
+            <button class="btn btn--ghost btn--sm" id="btn-vaciar">🗑 Vaciar carrito</button>
+          </div>
+          <div class="cart-items" id="cart-items"></div>
+        </div>
+
+        <!-- Resumen -->
+        <div class="order-summary">
+          <h3>Resumen del pedido</h3>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="sum-subtotal">$0</span>
+          </div>
+          <div class="summary-row">
+            <span>Envío</span>
+            <span id="sum-envio">$0</span>
+          </div>
+          <div class="summary-row">
+            <span>IVA (19%)</span>
+            <span id="sum-iva">$0</span>
+          </div>
+          <div class="summary-row summary-row--total">
+            <span>Total</span>
+            <span id="sum-total">$0</span>
+          </div>
+
+          <!-- Cupón -->
+          <div style="margin:20px 0;display:flex;gap:8px;">
+            <input type="text" id="cupon-input" placeholder="Código de cupón" style="flex:1;" />
+            <button class="btn btn--ghost btn--sm" id="btn-cupon">Aplicar</button>
+          </div>
+          <p id="cupon-msg" style="font-size:.8rem;color:var(--text-muted);margin-bottom:16px;display:none;"></p>
+
+          <button class="btn btn--primary btn--full btn--lg" id="btn-checkout">
+            ✅ Finalizar pedido
+          </button>
+          <a href="catalogo.html" class="btn btn--ghost btn--full" style="margin-top:10px;justify-content:center;">
+            ← Seguir comprando
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal de confirmación de pedido -->
+  <div id="modal-overlay" style="
+    display:none;position:fixed;inset:0;z-index:500;
+    background:rgba(0,0,0,.55);backdrop-filter:blur(4px);
+    align-items:center;justify-content:center;padding:24px;">
+    <div style="
+      background:var(--bg-surface);border-radius:20px;
+      padding:40px;max-width:420px;width:100%;text-align:center;
+      box-shadow:var(--shadow-xl);animation:fadeUp .35s ease;">
+      <div style="font-size:4rem;margin-bottom:16px;">🎉</div>
+      <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:10px;">¡Pedido confirmado!</h2>
+      <p style="color:var(--text-muted);font-size:.9rem;line-height:1.7;margin-bottom:24px;">
+        Tu pedido ha sido registrado exitosamente.<br />
+        Recibirás tu repuesto en <strong>48 horas hábiles</strong>.
+      </p>
+      <p style="font-size:.8rem;color:var(--text-muted);margin-bottom:28px;">
+        N° de orden: <strong id="order-num" style="color:var(--primary);"></strong>
+      </p>
+      <button class="btn btn--primary btn--full" id="btn-modal-close">Volver al inicio</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span class="footer__logo"><span class="logo-icon">⚙</span>Auto<strong>fix</strong></span>
+      <p class="footer__copy">© 2026 Autofix · Proyecto académico</p>
+    </div>
+  </footer>
+
+  <div id="toast"></div>
+  <script src="js/app.js"></script>
+  <script src="js/carrito.js"></script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autofix — Venta y reparación de autos</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body data-page="index">
+
+  <!-- ── NAVBAR ──────────────────────────────────────────────────── -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <span class="logo-icon">⚙</span>Auto<strong>fix</strong>
+      </a>
+      <nav class="navbar__links">
+        <a href="index.html"        data-page="index">Inicio</a>
+        <a href="catalogo.html"     data-page="catalogo">Catálogo</a>
+        <a href="diagnostico.html"  data-page="diagnostico">Tele-diagnóstico</a>
+        <a href="carrito.html"      data-page="carrito">Mi carrito</a>
+      </nav>
+      <div class="navbar__actions">
+        <label class="switch" title="Cambiar tema">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider"></span>
+        </label>
+        <a href="carrito.html" class="cart-icon-btn" title="Mi carrito">
+          🛒<span class="cart-badge hidden" id="cart-count">0</span>
+        </a>
+        <div class="auth-area" id="auth-area"></div>
+        <button class="hamburger" id="hamburger">☰</button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="index.html"       data-page="index">🏠 Inicio</a>
+      <a href="catalogo.html"    data-page="catalogo">🔧 Catálogo</a>
+      <a href="diagnostico.html" data-page="diagnostico">🤖 Tele-diagnóstico</a>
+      <a href="carrito.html"     data-page="carrito">🛒 Mi carrito</a>
+      <div id="mobile-auth" style="display:flex;gap:8px;margin-top:8px;"></div>
+    </nav>
+  </header>
+
+  <!-- ── HERO ────────────────────────────────────────────────────── -->
+  <!-- IMAGEN DE FONDO: sube tu archivo a public/images/hero.jpg -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__inner">
+      <div class="hero__content fade-up">
+        <p class="hero__eyebrow">
+          <span class="eyebrow-dot"></span>
+          Venta de repuestos y reparación automotriz
+        </p>
+        <h1 class="hero__title">
+          Tu auto en las<br />
+          <span class="gradient-text">mejores manos</span>
+        </h1>
+        <p class="hero__subtitle">
+          Repuestos originales con compatibilidad garantizada, diagnóstico remoto
+          instantáneo y un taller experto a un clic de distancia.
+        </p>
+        <div class="hero__ctas">
+          <a href="catalogo.html" class="btn btn--primary btn--lg">🔧 Explorar catálogo</a>
+          <a href="diagnostico.html" class="btn btn--ghost btn--lg" style="color:#fff;border-color:rgba(255,255,255,.3);">🤖 Diagnóstico gratis</a>
+        </div>
+        <div class="hero__stats">
+          <div class="stat"><span class="stat__num">+12K</span><span class="stat__label">Repuestos</span></div>
+          <div class="stat"><span class="stat__num">+200</span><span class="stat__label">Marcas</span></div>
+          <div class="stat"><span class="stat__num">48h</span><span class="stat__label">Entrega</span></div>
+          <div class="stat"><span class="stat__num">4.9★</span><span class="stat__label">Calificación</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BANDA DE MARCAS ──────────────────────────────────────────── -->
+  <section class="section--alt" style="padding:32px 0;">
+    <div class="container">
+      <div class="brand-strip">
+        <span>Toyota</span><span>Chevrolet</span><span>Hyundai</span>
+        <span>Ford</span><span>Nissan</span><span>Kia</span>
+        <span>Mazda</span><span>Honda</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICIOS ────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Todo lo que tu auto necesita</h2>
+        <p>Autofix reúne venta de repuestos, diagnóstico y reparación en una sola plataforma.</p>
+      </div>
+      <div class="services-grid">
+        <a href="catalogo.html" class="service-card fade-up">
+          <div class="service-card__icon">🔧</div>
+          <h3>Catálogo de repuestos</h3>
+          <p>Filtra por marca, modelo y año. Compatibilidad verificada en tiempo real.</p>
+          <span class="service-card__link">Ver catálogo →</span>
+        </a>
+        <a href="diagnostico.html" class="service-card fade-up">
+          <div class="service-card__icon">🤖</div>
+          <h3>Tele-diagnóstico IA</h3>
+          <p>Describe el síntoma y obtén un diagnóstico detallado con piezas recomendadas.</p>
+          <span class="service-card__link">Diagnosticar →</span>
+        </a>
+        <a href="carrito.html" class="service-card fade-up">
+          <div class="service-card__icon">🛒</div>
+          <h3>Mi carrito</h3>
+          <p>Gestiona tus repuestos seleccionados, ajusta cantidades y finaliza tu pedido.</p>
+          <span class="service-card__link">Ver carrito →</span>
+        </a>
+        <a href="registro.html" class="service-card fade-up">
+          <div class="service-card__icon">👤</div>
+          <h3>Mi cuenta</h3>
+          <p>Crea tu cuenta gratis para guardar favoritos, historial y recibir ofertas.</p>
+          <span class="service-card__link">Registrarse →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SHOWCASE: TALLER (con imagen) ────────────────────────────── -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="split">
+        <!-- IMAGEN: sube tu archivo a public/images/taller.jpg -->
+        <div class="split__media">
+          <img src="images/taller.png" alt="Taller mecánico Autofix"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="img-placeholder" style="display:none;">
+            <span class="img-placeholder__icon">🖼️</span>
+            images/taller.jpg
+          </div>
+        </div>
+        <div class="split__content">
+          <p class="split__eyebrow">Reparación profesional</p>
+          <h2>Un taller experto que cuida cada detalle</h2>
+          <p>Nuestros mecánicos certificados trabajan con herramientas de diagnóstico de última generación para devolverle a tu vehículo su mejor rendimiento.</p>
+          <ul class="split__list">
+            <li>Mecánicos certificados con años de experiencia</li>
+            <li>Repuestos originales y garantizados</li>
+            <li>Presupuesto transparente antes de empezar</li>
+            <li>Garantía escrita en cada reparación</li>
+          </ul>
+          <a href="diagnostico.html" class="btn btn--primary">Agendar diagnóstico →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRODUCTOS DESTACADOS ──────────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Repuestos más vendidos</h2>
+        <p>Los favoritos de nuestra comunidad de mecánicos y conductores.</p>
+      </div>
+      <div class="cards-grid" id="featured-grid"></div>
+      <div style="text-align:center;margin-top:36px;">
+        <a href="catalogo.html" class="btn btn--outline btn--lg">Ver catálogo completo →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GALERÍA DE SERVICIOS (con imágenes) ──────────────────────── -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nuestros servicios</h2>
+        <p>Soluciones completas para mantener tu auto siempre en marcha.</p>
+      </div>
+      <div class="gallery-grid">
+        <!-- IMAGEN: public/images/servicio-frenos.jpg -->
+        <article class="gallery-card fade-up">
+          <img src="images/servicio-frenos.png" alt="Servicio de frenos"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="img-placeholder"><span class="img-placeholder__icon">🖼️</span>servicio-frenos.jpg</div>
+          <div class="gallery-card__overlay"><h3>Frenos</h3><p>Discos, pastillas y revisión completa.</p></div>
+        </article>
+        <!-- IMAGEN: public/images/servicio-motor.jpg -->
+        <article class="gallery-card fade-up">
+          <img src="images/servicio-motor.png" alt="Servicio de motor"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="img-placeholder"><span class="img-placeholder__icon">🖼️</span>servicio-motor.jpg</div>
+          <div class="gallery-card__overlay"><h3>Motor</h3><p>Afinamiento, correas y diagnóstico.</p></div>
+        </article>
+        <!-- IMAGEN: public/images/servicio-llantas.jpg -->
+        <article class="gallery-card fade-up">
+          <img src="images/servicio-llantas.png" alt="Servicio de llantas"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="img-placeholder"><span class="img-placeholder__icon">🖼️</span>servicio-llantas.jpg</div>
+          <div class="gallery-card__overlay"><h3>Llantas</h3><p>Alineación, balanceo y montaje.</p></div>
+        </article>
+        <!-- IMAGEN: public/images/servicio-electrico.jpg -->
+        <article class="gallery-card fade-up">
+          <img src="images/servicio-electrico.png" alt="Servicio eléctrico"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="img-placeholder"><span class="img-placeholder__icon">🖼️</span>servicio-electrico.jpg</div>
+          <div class="gallery-card__overlay"><h3>Eléctrico</h3><p>Baterías, alternadores y sensores.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ¿POR QUÉ AUTOFIX? ─────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>¿Por qué Autofix?</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-card__icon">🎯</div>
+          <h3>Compatibilidad exacta</h3>
+          <p>Algoritmo que cruza marca, modelo y año para garantizar que cada pieza encaje a la perfección.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">⚡</div>
+          <h3>Diagnóstico instantáneo</h3>
+          <p>Motor de IA que interpreta síntomas y sugiere las piezas específicas que debes revisar.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">🚚</div>
+          <h3>Entrega en 48 horas</h3>
+          <p>Red logística con seguimiento en tiempo real desde el taller hasta tu puerta.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">🔒</div>
+          <h3>Compra segura</h3>
+          <p>Pago protegido, garantía de devolución y soporte técnico especializado en cada pedido.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA REGISTRO ──────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner">
+        <h2>¿Primera vez en Autofix?</h2>
+        <p>Crea tu cuenta gratis y accede a descuentos exclusivos, historial de pedidos y mucho más.</p>
+        <a href="registro.html" class="btn btn--primary btn--lg">Crear cuenta gratis →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <span class="footer__logo"><span class="logo-icon">⚙</span>Auto<strong>fix</strong></span>
+      <div class="footer__links">
+        <a href="catalogo.html">Catálogo</a>
+        <a href="diagnostico.html">Diagnóstico</a>
+        <a href="login.html">Ingresar</a>
+      </div>
+      <p class="footer__copy">© 2026 Autofix · Proyecto académico</p>
+    </div>
+  </footer>
+
+  <div id="toast"></div>
+  <script src="js/app.js"></script>
+  <script src="js/catalogo.js"></script>
+  <script>
+    // Renderizar 4 productos destacados en la home
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid     = document.getElementById('featured-grid');
+      const featured = inventario.slice(0, 4);
+      grid.innerHTML = featured.map(renderCard).join('');
+    });
+  </script>
+</body>
+</html>

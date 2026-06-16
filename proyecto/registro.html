@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crear cuenta — Autofix</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body data-page="registro">
+
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo"><span class="logo-icon">⚙</span>Auto<strong>fix</strong></a>
+      <nav class="navbar__links">
+        <a href="index.html"       data-page="index">Inicio</a>
+        <a href="catalogo.html"    data-page="catalogo">Catálogo</a>
+        <a href="diagnostico.html" data-page="diagnostico">Tele-diagnóstico</a>
+      </nav>
+      <div class="navbar__actions">
+        <label class="switch" title="Cambiar tema">
+          <input type="checkbox" id="theme-toggle" /><span class="slider"></span>
+        </label>
+        <a href="carrito.html" class="cart-icon-btn">
+          🛒<span class="cart-badge hidden" id="cart-count">0</span>
+        </a>
+        <div class="auth-area" id="auth-area"></div>
+        <button class="hamburger" id="hamburger">☰</button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="index.html"       data-page="index">🏠 Inicio</a>
+      <a href="catalogo.html"    data-page="catalogo">🔧 Catálogo</a>
+      <a href="diagnostico.html" data-page="diagnostico">🤖 Tele-diagnóstico</a>
+      <div id="mobile-auth" style="display:flex;gap:8px;margin-top:8px;"></div>
+    </nav>
+  </header>
+
+  <main class="auth-page">
+    <div class="auth-card fade-up">
+
+      <div class="auth-card__logo">
+        <span class="logo-icon">⚙</span>
+        Auto<strong>fix</strong>
+      </div>
+
+      <h2>Crea tu cuenta gratis</h2>
+      <p class="auth-card__sub">Únete a miles de conductores y mecánicos que ya usan Autofix.</p>
+
+      <div class="auth-alert auth-alert--error" id="reg-alert">
+        <span>⚠️</span><span id="reg-alert-msg"></span>
+      </div>
+      <div class="auth-alert auth-alert--success" id="reg-success">
+        <span>✅</span><span>Cuenta creada. Redirigiendo…</span>
+      </div>
+
+      <form class="auth-form" id="registro-form" novalidate>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div class="input-group">
+            <label for="reg-nombre">Nombre</label>
+            <div class="input-wrapper">
+              <span class="input-icon">👤</span>
+              <input type="text" id="reg-nombre" placeholder="Juan" required />
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="reg-apellido">Apellido</label>
+            <div class="input-wrapper">
+              <span class="input-icon">👤</span>
+              <input type="text" id="reg-apellido" placeholder="Pérez" required />
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="reg-email">Correo electrónico</label>
+          <div class="input-wrapper">
+            <span class="input-icon">✉️</span>
+            <input type="email" id="reg-email" placeholder="tu@correo.com" required />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="reg-telefono">Teléfono (opcional)</label>
+          <div class="input-wrapper">
+            <span class="input-icon">📱</span>
+            <input type="text" id="reg-telefono" placeholder="+56 9 XXXX XXXX" />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="reg-pw">Contraseña</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="reg-pw" placeholder="Mínimo 6 caracteres" required />
+            <button type="button" class="toggle-pw" data-target="reg-pw">👁</button>
+          </div>
+          <!-- Indicador de fortaleza -->
+          <div style="display:flex;gap:4px;margin-top:6px;" id="strength-bars">
+            <div style="height:4px;flex:1;border-radius:4px;background:var(--border);" id="sb1"></div>
+            <div style="height:4px;flex:1;border-radius:4px;background:var(--border);" id="sb2"></div>
+            <div style="height:4px;flex:1;border-radius:4px;background:var(--border);" id="sb3"></div>
+            <div style="height:4px;flex:1;border-radius:4px;background:var(--border);" id="sb4"></div>
+          </div>
+          <p id="strength-label" style="font-size:.73rem;color:var(--text-muted);margin-top:3px;"></p>
+        </div>
+
+        <div class="input-group">
+          <label for="reg-pw2">Confirmar contraseña</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="reg-pw2" placeholder="Repite tu contraseña" required />
+            <button type="button" class="toggle-pw" data-target="reg-pw2">👁</button>
+          </div>
+        </div>
+
+        <label style="display:flex;align-items:flex-start;gap:8px;font-size:.83rem;color:var(--text-secondary);cursor:pointer;line-height:1.5;">
+          <input type="checkbox" id="reg-terms" style="width:auto;margin-top:2px;" required />
+          Acepto los <a href="#" style="color:var(--primary);font-weight:600;">términos y condiciones</a>
+          y la <a href="#" style="color:var(--primary);font-weight:600;">política de privacidad</a>.
+        </label>
+
+        <button type="submit" class="btn btn--primary btn--full btn--lg" id="btn-registro">
+          Crear cuenta gratis
+        </button>
+
+      </form>
+
+      <p class="auth-switch">
+        ¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>
+      </p>
+
+    </div>
+  </main>
+
+  <div id="toast"></div>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

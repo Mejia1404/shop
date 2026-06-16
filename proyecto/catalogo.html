@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo — Autofix</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body data-page="catalogo">
+
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo"><span class="logo-icon">⚙</span>Auto<strong>fix</strong></a>
+      <nav class="navbar__links">
+        <a href="index.html"        data-page="index">Inicio</a>
+        <a href="catalogo.html"     data-page="catalogo">Catálogo</a>
+        <a href="diagnostico.html"  data-page="diagnostico">Tele-diagnóstico</a>
+        <a href="carrito.html"      data-page="carrito">Mi carrito</a>
+      </nav>
+      <div class="navbar__actions">
+        <label class="switch" title="Cambiar tema">
+          <input type="checkbox" id="theme-toggle" /><span class="slider"></span>
+        </label>
+        <a href="carrito.html" class="cart-icon-btn" title="Mi carrito">
+          🛒<span class="cart-badge hidden" id="cart-count">0</span>
+        </a>
+        <div class="auth-area" id="auth-area"></div>
+        <button class="hamburger" id="hamburger">☰</button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="index.html"       data-page="index">🏠 Inicio</a>
+      <a href="catalogo.html"    data-page="catalogo">🔧 Catálogo</a>
+      <a href="diagnostico.html" data-page="diagnostico">🤖 Tele-diagnóstico</a>
+      <a href="carrito.html"     data-page="carrito">🛒 Mi carrito</a>
+      <div id="mobile-auth" style="display:flex;gap:8px;margin-top:8px;"></div>
+    </nav>
+  </header>
+
+  <!-- ── HEADER ──────────────────────────────────────────────────── -->
+  <div class="page-header">
+    <h1>🔧 Catálogo de repuestos</h1>
+    <p>Selecciona tu vehículo y encuentra las piezas compatibles al instante.</p>
+  </div>
+
+  <!-- ── CATÁLOGO ─────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Filtros -->
+      <div class="filter-bar">
+        <div class="filter-group">
+          <label for="sel-marca">Marca</label>
+          <select id="sel-marca">
+            <option value="">Todas las marcas</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Chevrolet">Chevrolet</option>
+            <option value="Hyundai">Hyundai</option>
+            <option value="Ford">Ford</option>
+            <option value="Nissan">Nissan</option>
+            <option value="Kia">Kia</option>
+            <option value="Mazda">Mazda</option>
+            <option value="Honda">Honda</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="sel-modelo">Modelo</label>
+          <select id="sel-modelo">
+            <option value="">Todos los modelos</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="sel-año">Año</label>
+          <select id="sel-año">
+            <option value="">Todos los años</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="sel-cat">Categoría</label>
+          <select id="sel-cat">
+            <option value="">Todas las categorías</option>
+            <option value="Motor">Motor</option>
+            <option value="Frenos">Frenos</option>
+            <option value="Suspensión">Suspensión</option>
+            <option value="Dirección">Dirección</option>
+            <option value="Eléctrico">Eléctrico</option>
+            <option value="Transmisión">Transmisión</option>
+            <option value="Llantas">Llantas</option>
+            <option value="Escape">Escape</option>
+            <option value="Aire acondicionado">Aire acondicionado</option>
+            <option value="Filtros">Filtros</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="sel-busqueda">Buscar</label>
+          <input type="text" id="sel-busqueda" placeholder="Ej: filtro de aceite…" />
+        </div>
+        <button type="button" class="btn btn--primary" id="btn-buscar" style="align-self:flex-end;">
+          🔍 Buscar
+        </button>
+        <button type="button" class="btn btn--ghost" id="btn-limpiar" style="align-self:flex-end;">
+          ✕ Limpiar
+        </button>
+      </div>
+
+      <!-- Contador -->
+      <p id="resultado-count" style="color:var(--text-muted);font-size:.88rem;margin-bottom:20px;"></p>
+
+      <!-- Tarjetas -->
+      <div class="cards-grid" id="cards-container">
+        <div class="state-empty">
+          <div class="state-empty__icon">🔧</div>
+          <p>Usa los filtros para encontrar repuestos compatibles.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span class="footer__logo"><span class="logo-icon">⚙</span>Auto<strong>fix</strong></span>
+      <p class="footer__copy">© 2026 Autofix · Proyecto académico</p>
+    </div>
+  </footer>
+
+  <div id="toast"></div>
+  <script src="js/app.js"></script>
+  <script src="js/catalogo.js"></script>
+</body>
+</html>
